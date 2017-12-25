@@ -1,0 +1,33 @@
+version: '3'
+services:
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch-oss:6.1.1
+    container_name: elasticsearch
+    environment:
+      - discovery.type=single-node
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+    volumes:
+      - ./esdata:/usr/share/elasticsearch/data
+    ports:
+      - 9200:9200
+    networks:
+    - appnet
+  data-loader:
+    tty: true
+    stdin_open: false
+    networks:
+    - appnet
+    build:
+      context: ./data-loader
+      dockerfile: Dockerfile
+    depends_on:
+      - elasticsearch
+    volumes:
+      - ./data-loader:/opt/data-loader:z
+    command: "node"
+networks:
+  appnet:
+    driver: "bridge"
+volumes:
+  data:
+    driver: "local"

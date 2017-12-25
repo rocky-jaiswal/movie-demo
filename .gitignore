@@ -1,0 +1,3 @@
+/data-loader/csvdata/*.csv
+/data-loader/node_modules/*
+/esdata/*
