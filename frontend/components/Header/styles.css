@@ -1,0 +1,5 @@
+.header {
+  composes: main-blue from '../Layout/styles.css';
+  height: 150px;
+  width: 100%;
+}

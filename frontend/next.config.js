@@ -8,22 +8,6 @@ module.exports = {
     )
 
     config.module.rules.push({
-      test: /\.tsx$/,
-      use: [
-        {
-          loader: 'emit-file-loader',
-          options: {
-            name: 'dist/[path][name].[ext]'
-          }
-        },
-        {
-          loader: 'ts-loader'
-        },
-      ],
-      exclude: /node_modules/,
-    })
-
-    config.module.rules.push({
       test: /\.css$/,
       use: [
         {
