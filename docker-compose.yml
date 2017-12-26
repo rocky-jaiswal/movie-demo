@@ -19,12 +19,21 @@ services:
     - appnet
     build:
       context: ./data-loader
-      dockerfile: Dockerfile
     depends_on:
       - elasticsearch
     volumes:
       - ./data-loader:/opt/data-loader:z
     command: "node"
+  frontend:
+    networks:
+    - appnet
+    build:
+      context: ./frontend
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./frontend:/app:z
+    command: "yarn dev"
 networks:
   appnet:
     driver: "bridge"
