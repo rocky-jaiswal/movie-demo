@@ -34,6 +34,20 @@ services:
     volumes:
       - ./frontend:/app:z
     command: "yarn dev"
+  backend:
+    networks:
+    - appnet
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "3001:3001"
+    volumes:
+      - ./backend:/app:z
+      - ./dbdata:/opt/db:z
+    environment:
+      NODE_ENV: development
+    command: "npx nodemon index.js"
 networks:
   appnet:
     driver: "bridge"

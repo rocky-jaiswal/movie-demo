@@ -16,6 +16,10 @@
   background-color: var(--main-blue);
 }
 
+.main-green {
+  background-color: var(--main-green);
+}
+
 .container {
   display: flex;
   flex-direction: column;

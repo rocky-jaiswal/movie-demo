@@ -3,8 +3,6 @@ import TitleSearch from '../components/TitleSearch';
 
 export default () => (
   <Layout>
-    <div>
-      <TitleSearch />
-    </div>
+    <TitleSearch />
   </Layout>
 );

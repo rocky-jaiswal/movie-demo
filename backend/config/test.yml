@@ -1,0 +1,8 @@
+db:
+  connection:
+    filename: '/opt/db/test.db'
+api:
+  port: 9001
+  cors: true
+token:
+  secret: foobar

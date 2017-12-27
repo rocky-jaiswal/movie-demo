@@ -1,0 +1,8 @@
+db:
+  connection:
+    filename: '/opt/db/dev.db'
+api:
+  port: 3001
+  cors: true
+token:
+  secret: das34rtji89sasy676768ghsfsd34sdfg34teg345tgefdgv0434kmr34r8dgfgdtj54n4334gtr5

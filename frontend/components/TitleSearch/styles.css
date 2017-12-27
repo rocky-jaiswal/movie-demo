@@ -1,0 +1,22 @@
+.titleSearch {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.titleSearch input {
+  height: 25px;
+  padding: 5px;
+  margin: 10px;
+}
+
+.big-green-button {
+  border: none;
+  border-radius: 2px;
+  padding: 15px 25px;
+  font-size: 20px;
+  color: #FEFEFE;
+  composes: main-green from '../Layout/styles.css';
+}

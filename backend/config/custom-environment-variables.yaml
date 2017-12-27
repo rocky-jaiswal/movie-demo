@@ -1,0 +1,6 @@
+auth0_url: AUTH0_AUDIENCE
+token:
+  secret: TOKEN_SECRET
+db:
+  connection:
+    filename: DB_FILE

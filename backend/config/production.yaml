@@ -1,0 +1,6 @@
+db:
+  connection:
+    filename: '/opt/db/prod.db'
+api:
+  port: 3001
+  cors: false
