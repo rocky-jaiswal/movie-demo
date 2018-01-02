@@ -2,12 +2,13 @@
 
 const { findByTitle } = require('../services/es_service');
 
-class QueriesController {
+class SearchController {
 
-  async create(request, h) {
+  create(request, h) {
+
     return findByTitle(request.payload.title);
   }
 
 }
 
-module.exports = new QueriesController();
+module.exports = new SearchController();

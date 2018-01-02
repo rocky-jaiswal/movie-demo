@@ -64,7 +64,7 @@ const insertMovies = async () => {
     return ({
       id: m.movieId,
       title: titleAndYear.substr(0, titleAndYear.length - 7),
-      year: parseInt(titleAndYear.substr(-5, 4)),
+      year: parseInt(titleAndYear.substr(-5, 4), 10),
       genres: m.genres.split('|'),
       imdbId: ids[1],
       tmdbId: ids[2],

@@ -6,7 +6,7 @@ const Config  = require('config');
 
 class AuthService {
 
-  constructor(msgRepo, userRepo) {
+  constructor(userRepo) {
 
     this.userRepo = userRepo;
   }

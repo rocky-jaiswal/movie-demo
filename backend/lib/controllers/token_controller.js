@@ -10,7 +10,7 @@ class TokenController {
 
   create(request, h) {
 
-    return new AuthService(MessagesRepo, UsersRepo)
+    return new AuthService(UsersRepo)
       .login(request.payload)
       .then((user) => {
 
