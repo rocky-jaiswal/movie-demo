@@ -1,8 +1,11 @@
-import { all, call, put, takeLatest } from 'redux-saga/effects';
-import loadInitialData from './loadInitialData';
+import { all, takeLatest } from 'redux-saga/effects';
+
+import { actionTypes } from '../redux/app/actions';
+
+import search from './search';
 
 export function* rootSaga() {
   yield all([
-    takeLatest('LOAD_INITIAL_DATA', loadInitialData)
+    takeLatest(actionTypes.SUBMIT_SEARCH_QUERY, search),
   ]);
 }

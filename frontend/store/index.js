@@ -1,3 +1,4 @@
+import * as Immutable from 'seamless-immutable';
 import { createStore, applyMiddleware } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import withRedux from 'next-redux-wrapper';
@@ -10,9 +11,13 @@ import { rootSaga } from './../sagas';
 const sagaMiddleware = createSagaMiddleware();
 
 export function configureStore(state = reduxInitialState) {
+  let initialState = state;
+  if (!Immutable.isImmutable(state)) {
+    initialState = Immutable.from(state);
+  }
   const store = createStore(
     createReducer(),
-    state,
+    initialState,
     composeWithDevTools(applyMiddleware(sagaMiddleware)),
   );
 

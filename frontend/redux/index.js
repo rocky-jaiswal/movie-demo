@@ -8,6 +8,6 @@ export const reduxInitialState = {
 
 export const createReducer = () => {
   return combineReducers({
-    app: appReducer
+    app: appReducer,
   });
 };
