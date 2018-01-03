@@ -13,7 +13,7 @@ function* search() {
     yield put(searchQueryInProgress());
     const state = yield select();
     const result = yield call(API.searchByTitle, state.app.titleQuery);
-    yield put(searchQuerySucceeded(result.data.hits.hits));
+    yield put(searchQuerySucceeded(result.data));
   } catch (err) {
     console.error(err);
     yield put(searchQueryFailed());

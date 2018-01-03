@@ -1,0 +1,19 @@
+.movieListContainer {
+  display: flex;
+  margin-top: 50px;
+}
+
+.movieList {
+  display: flex;
+  flex-grow: 1;
+}
+
+.movie {
+  display: flex;
+  flex-grow: 1;
+  border: 1px solid #969696;
+}
+
+.movie p {
+  font-size: 0.8rem;
+}
