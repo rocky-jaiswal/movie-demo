@@ -1,6 +1,7 @@
-import { call, put, select } from 'redux-saga/effects';
+import { call, put, select, takeLatest } from 'redux-saga/effects';
 
 import {
+  actionTypes,
   searchQueryInProgress,
   searchQueryFailed,
   searchQuerySucceeded,
@@ -20,5 +21,8 @@ function* search() {
   }
 }
 
+function* searchWatcher() {
+  yield takeLatest(actionTypes.SUBMIT_SEARCH_QUERY, search);
+}
 
-export default search;
+export default searchWatcher;

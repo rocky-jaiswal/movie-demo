@@ -1,11 +1,11 @@
-import { all, takeLatest } from 'redux-saga/effects';
+import { all, call } from 'redux-saga/effects';
 
-import { actionTypes } from '../redux/app/actions';
-
-import search from './search';
+import searchWatcher from './search';
+import websocketSagas from './websocket';
 
 export function* rootSaga() {
   yield all([
-    takeLatest(actionTypes.SUBMIT_SEARCH_QUERY, search),
+    call(searchWatcher),
+    call(websocketSagas)
   ]);
 }
