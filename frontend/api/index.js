@@ -20,6 +20,12 @@ const API = {
       .post(`${Config.env.baseURL}/search`, { title });
   },
 
+  async createJob(movieData) {
+    return API
+      .init()
+      .post(`${Config.env.baseURL}/jobs/movieDetails`, { movieData });
+  },
+
 };
 
 export default API;

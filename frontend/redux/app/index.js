@@ -30,6 +30,10 @@ const appReducer = (state = initialState, action) => {
         .set('loading', false)
         .set('movies', action.payload);
 
+    case actionTypes.INCOMING_MOVIE_DETAILS:
+      return state
+        .set('movies', action.payload);
+
     default:
       return state;
   }

@@ -14,7 +14,11 @@ function* search() {
     yield put(searchQueryInProgress());
     const state = yield select();
     const result = yield call(API.searchByTitle, state.app.titleQuery);
-    yield put(searchQuerySucceeded(result.data));
+
+    const movieData = result.data;
+    yield put(searchQuerySucceeded(movieData));
+
+    yield call(API.createJob, movieData);
   } catch (err) {
     console.error(err);
     yield put(searchQueryFailed());
